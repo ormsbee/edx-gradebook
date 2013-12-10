@@ -37,6 +37,9 @@ grades for their courses.
 3. There is other information *about* a submission or group of submissions
 (like student feedback, staff-only comments), that are separate from the
 submissions themselves.
+4. We don't have to implement it all at once, and there are undoubtedly other
+submission types that aren't covered here. The hope is just that this sketch is
+enough of a framework to build around.
 
 ### Creating a Submission
 
@@ -160,3 +163,14 @@ Example:
 }
 </pre>
 
+### Concerns
+
+1. Simultaneously supporting human grading and automatic grading adds complexity
+   to the system.
+2. The design assumes items are usages, but should they also capture definition
+   IDs as well?
+3. Submissions would be part of SubmissionHistories, where a SubmissionHistory
+   is a (course, user, context, item) tuple. Should that be more explicit
+   somehow?
+4. Is supporting multiple contexts for a given submission something that would
+   actually be useful?
