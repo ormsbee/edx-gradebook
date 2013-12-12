@@ -101,9 +101,7 @@ Optional Fields:
                only one problem part.
 * `hint_shown`: Dictionary mapping problem part identifiers to booleans
                 indicating whether a hint was shown for that problem part.
-* `version`: The version of the item being submitted against. Ideally, it would
-             have a timestamp element like Mongo IDs, so we can easily query
-             for people who have submitted when a problem was in a broken state.
+* `version`: The version of the item being submitted against.
 * `variant`: Usually a per-student variable, for a dynamic item, this would tell
              us what variant of the problem the student saw. This would be a
              random seed in edx-platform, but could be explicitly named as well.
@@ -174,3 +172,4 @@ Example:
    somehow?
 4. Is supporting multiple contexts for a given submission something that would
    actually be useful?
+
