@@ -122,11 +122,6 @@ Optional Fields:
           example, a re-scoring run might specify what user triggered the
           re-scoring, and what task ID the process doing the re-scoring was for
           auditing purposes.
-* `is_active`: Defaults to true. You might explicitly set this as false if you
-               want to allow people to do practice rounds with the same problem
-               (and different randomizations) after they've submitted for
-               credit. We might also do it internally, if we decide to implement
-               taking the highest score rather than the most recent.
 
 Example:
 
