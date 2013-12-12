@@ -99,8 +99,6 @@ Optional Fields:
                to easily generate histograms for answers to certain types of
                questions. `summary` may be used as a convenience if there is
                only one problem part.
-* `hint_shown`: Dictionary mapping problem part identifiers to booleans
-                indicating whether a hint was shown for that problem part.
 * `version`: The version of the item being submitted against.
 * `variant`: Usually a per-student variable, for a dynamic item, this would tell
              us what variant of the problem the student saw. This would be a
@@ -167,4 +165,10 @@ Example:
    somehow?
 4. Is supporting multiple contexts for a given submission something that would
    actually be useful?
-
+5. What kind of support do we need for hints? Punting on this for now. Is it
+   just boolean for whether hints are or aren't present? Different levels of
+   hints? Because we intend to keep a separate tracking of the highest and most
+   recent scores for a given problem part, penalization for hints gets messy.
+   Might address this by simply saying that grading by "highest score achieved"
+   and penalization for hints are incompatible with each other and cannot be
+   used on the same problem.
