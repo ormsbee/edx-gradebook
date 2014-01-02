@@ -1,0 +1,10 @@
+# Base requirements to run the gradebook
+
+Django==1.6.1
+Markdown==2.3.1
+Werkzeug==0.9.4
+django-extensions==1.2.5
+django-model-utils==1.5.0
+djangorestframework==2.3.10
+six==1.4.1
+wsgiref==0.1.2

@@ -13,7 +13,8 @@ import os
 import sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-sys.path.append(os.path.join(BASE_DIR, ".."))
+APPS_DIR = os.path.join(BASE_DIR, "..", "apps")
+sys.path.append(APPS_DIR)  # So it can find the gradebook apps dir
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -39,16 +40,19 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Non-standard, but convenient
+    # Dependencies for gradebook to work
     'django_extensions',
-
-    # Required for gradebook to work
     'rest_framework',
-    'gradebook.core',
-    'gradebook.submissions',
 
     # Debug
     'debug_toolbar',
+
+    # Test Runner
+    'django_nose',
+
+    # Gradebook apps
+    'gradebook.core',
+    'gradebook.submissions',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -99,3 +103,12 @@ STATIC_URL = '/static/'
 
 # Necessary for django-debug-toolbar
 INTERNAL_IPS = ('127.0.0.1',)
+
+# Necessary for nosetests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+NOSE_ARGS = [
+    'gradebook',  # Package to run tests for
+    '--rednose',  # Color test output
+    '--with-coverage',  # Gather coverage stats
+    '--cover-package=gradebook'  # But restrict coverage stats to gradebook
+]

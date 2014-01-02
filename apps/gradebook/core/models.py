@@ -3,9 +3,10 @@ These models are meant to be used by any application, and can be linked to with
 a foreign key relation.
 """
 from django.db import models
-from django_extensions.db.fields import CreationDateTimeField, UUIDField
+from django_extensions.db.fields import CreationDateTimeField, ModificationDateTimeField
 
-from validators import external_id_validator
+from gradebook.core.fields import ExternalIDField
+
 
 class Context(models.Model):
     """
@@ -20,19 +21,17 @@ class Context(models.Model):
     particularly important because data and processes downstream may depend on
     a given Context.
     """
-    # uuid = UUIDField(db_index=True, unique=True)
-    external_id = models.CharField(
-        "External ID", max_length=255, db_index=True, unique=True,
-        validators=[external_id_validator]
-    )
+    external_id = ExternalIDField("External ID")
     name = models.CharField("Name", max_length=255, db_index=True)
     description = models.TextField("Description", blank=True)
     created_at = CreationDateTimeField(db_index=True)
+    updated_at = ModificationDateTimeField(db_index=True)
 
 
 class Student(models.Model):
     """
 
     """
-    # uuid = UUIDField(db_index=True, unique=True)
+    external_id = ExternalIDField("External ID")
     created_at = CreationDateTimeField(db_index=True)
+    updated_at = ModificationDateTimeField(db_index=True)

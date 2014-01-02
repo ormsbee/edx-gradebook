@@ -7,6 +7,7 @@ Signals:
 
 
 """
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 from django_extensions.db.fields import CreationDateTimeField, UUIDField
@@ -38,5 +39,8 @@ class SubmissionPart(models.Model):
     summary = models.CharField(max_length=255, db_index=True, blank=True, null=True)
 
     part_id = models.CharField(max_length=255)
-    raw_score = models.FloatField(null=True)
+    raw_score = models.FloatField(
+        null=True,
+        validators=[MinValueValidator(0.0), MaxValueValidator(1.0)]
+    )
     unweighted_max_score = models.FloatField(null=True)
