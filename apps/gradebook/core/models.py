@@ -8,6 +8,12 @@ from django_extensions.db.fields import CreationDateTimeField, ModificationDateT
 from gradebook.core.fields import ExternalIDField
 
 
+class Organization(models.Model):
+    """
+    An Organization
+    """
+
+
 class Context(models.Model):
     """
     A Context is an identifier used to group content. A Context could be a

@@ -3,15 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to edx-gradebook's documentation!
-=========================================
-
-Contents:
+edx-gradebook
+=============
 
 .. toctree::
    :maxdepth: 2
 
+.. include:: ../README.rst
 
+API Specs
+=========
+
+.. include:: rest_spec.rst
 
 Indices and tables
 ==================

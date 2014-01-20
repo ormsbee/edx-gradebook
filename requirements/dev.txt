@@ -4,6 +4,7 @@
 -r common.txt
 
 # Debug tools
+bpython==0.12
 django-debug-toolbar==0.11.0
 sqlparse==0.1.10
 
@@ -20,3 +21,8 @@ Jinja2==2.7.1
 MarkupSafe==0.18
 Pygments==1.6
 Sphinx==1.2
+
+# Code quality
+astroid==1.0.1
+logilab-common==0.60.1
+pylint==1.1.0

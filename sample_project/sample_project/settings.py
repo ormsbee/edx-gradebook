@@ -110,5 +110,5 @@ NOSE_ARGS = [
     'gradebook',  # Package to run tests for
     '--rednose',  # Color test output
     '--with-coverage',  # Gather coverage stats
-    '--cover-package=gradebook'  # But restrict coverage stats to gradebook
+    '--cover-package=gradebook',  # But restrict coverage stats to gradebook
 ]
